@@ -44,7 +44,7 @@ jobs:
     - name: Install migrate library
       run: |
         make install-migrate
-        sudo mv migrate /usr/bin/
+        sudo mv migrate.linux-arm64 /usr/bin/migrate
         which migrate
 
     - name: Run migration
