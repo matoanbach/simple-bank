@@ -8,7 +8,7 @@ dropdb:
 	docker exec -it postgres17 dropdb simple_bank
 
 install-migrate:
-	curl -L https://github.com/golang-migrate/migrate/releases/download/v4.12.2/migrate.linux-arm64.tar.gz | tar xvz
+	curl -L https://github.com/golang-migrate/migrate/releases/download/v4.18.2/migrate.linux-amd64.tar.gz | tar xvz
 
 migrateup:
 	migrate -path db/migration -database "postgresql://root:secret@localhost:5432/simple_bank?sslmode=disable" -verbose up
