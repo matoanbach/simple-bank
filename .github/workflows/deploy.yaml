@@ -11,6 +11,10 @@ jobs:
   test:
     name: Build image
     runs-on: ubuntu-latest
+    permissions:
+        id-token: write  # ✅ Required for OIDC authentication
+        contents: read    # ✅ Allows reading repository content
+        
     steps:
       # First step
       - name: Checkout repo
