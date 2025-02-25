@@ -14,7 +14,7 @@ jobs:
     permissions:
         id-token: write  # ✅ Required for OIDC authentication
         contents: read    # ✅ Allows reading repository content
-        
+
     steps:
       # First step
       - name: Checkout repo
@@ -24,7 +24,9 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4 # More information on this action can be found below in the 'AWS Credentials' section
         with:
           # role-to-assume: arn:aws:iam::123456789012:role/my-github-actions-role
-          role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+          # role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-2
 
       # Second step
