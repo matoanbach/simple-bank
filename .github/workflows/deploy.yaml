@@ -19,7 +19,7 @@ jobs:
       # First step
       - name: Checkout repo
         uses: actions/checkout@v3
-        
+
       - name: Install kubectl
         uses: azure/setup-kubectl@v4
         with:
@@ -49,7 +49,7 @@ jobs:
           REPOSITORY: simplebank
           IMAGE_TAG: ${{ github.sha }}
         run: |
-          docker build -t $REGISTRY/$REPOSITORY:$IMAGE_TAG -t latest .
+          docker build -t $REGISTRY/$REPOSITORY:$IMAGE_TAG -t $REGISTRY/$REPOSITORY:latest .
           docker push -a $REGISTRY/$REPOSITORY
 
       - name: Update kube config
