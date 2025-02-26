@@ -19,6 +19,7 @@ jobs:
       # First step
       - name: Checkout repo
         uses: actions/checkout@v3
+        
       - name: Install kubectl
         uses: azure/setup-kubectl@v4
         with:
@@ -50,7 +51,10 @@ jobs:
         run: |
           docker build -t $REGISTRY/$REPOSITORY:$IMAGE_TAG -t latest .
           docker push -a $REGISTRY/$REPOSITORY
-      
+
+      - name: Update kube config
+        run: aws eks update-kubeconfig --name simple-bank --region us-east-2
+
       - name: Deploy image to Amazon EKS
         run: |
           kubectl apply -f eks/aws-auth.yaml
