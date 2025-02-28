@@ -1,4 +1,4 @@
-package gpai
+package gapi
 
 import (
 	db "github.com/matoanbach/simple-bank/db/sqlc"

@@ -1,4 +1,4 @@
-package gpai
+package gapi
 
 import (
 	"fmt"

@@ -13,7 +13,7 @@ import (
 	db "github.com/matoanbach/simple-bank/db/sqlc"
 	"github.com/matoanbach/simple-bank/db/util"
 	_ "github.com/matoanbach/simple-bank/doc/statik"
-	"github.com/matoanbach/simple-bank/gpai"
+	"github.com/matoanbach/simple-bank/gapi"
 	"github.com/matoanbach/simple-bank/pb"
 	"github.com/rakyll/statik/fs"
 	"google.golang.org/grpc"
@@ -37,7 +37,7 @@ func main() {
 }
 
 func runGrpcServer(config util.Config, store db.Store) {
-	server, err := gpai.NewServer(config, store)
+	server, err := gapi.NewServer(config, store)
 	if err != nil {
 		log.Fatal("cannot create the server:", err)
 	}
@@ -59,7 +59,7 @@ func runGrpcServer(config util.Config, store db.Store) {
 }
 
 func runGatewayServer(config util.Config, store db.Store) {
-	server, err := gpai.NewServer(config, store)
+	server, err := gapi.NewServer(config, store)
 	if err != nil {
 		log.Fatal("cannot create the server:", err)
 	}
