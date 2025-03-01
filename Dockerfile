@@ -5,16 +5,14 @@ COPY . .
 RUN go build -o main main.go
 
 # Run stage
-FROM alpine
+FROM alpine:3.19
 WORKDIR /app
 COPY --from=builder /app/main .
-# COPY --from=builder /app/migrate ./migrate
-COPY --from=builder /app/db/migration ./db/migration
 COPY app.env .
 COPY start.sh .
 COPY wait-for.sh .
-COPY db/migration ./migration
+COPY db/migration ./db/migration
 
-EXPOSE 8080
-CMD ["/app/main"]
+EXPOSE 8080 9090
+CMD [ "/app/main" ]
 ENTRYPOINT [ "/app/start.sh" ]

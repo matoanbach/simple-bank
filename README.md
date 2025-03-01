@@ -15,7 +15,7 @@ Shout out to [`Tech School`](https://bit.ly/m/techschool) for making the guide.
 
 ## Architecture
 
-<img src="https://github.com/matoanbach/simple-bank/images/architecture.png"/>
+<img src="https://github.com/matoanbach/simple-bank/blob/main/images/architecture.png"/>
 
 ## API documentation using Swagger UI
 
