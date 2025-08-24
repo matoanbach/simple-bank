@@ -16,7 +16,10 @@ migratedown:
 sqlc:
 	sqlc generate
 
+install-migrate:
+	curl -L https://github.com/golang-migrate/migrate/releases/download/v4.18.3/migrate.linux-amd64.tar.gz | tar xvz
+
 test:
 	go test -v -cover ./...
 
-.PHONY: posgres createdb dropdb migrateup migratedown sqlc
+.PHONY: posgres createdb dropdb migrateup migratedown sqlc install-migrate
