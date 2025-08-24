@@ -1,4 +1,4 @@
-module github.com/matoanbach/simple_bank
+module github.com/matoanbach/simple-bank
 
 go 1.25.0
 

@@ -7,7 +7,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/lib/pq"
-	db "github.com/matoanbach/simple_bank/db/sqlc"
+	db "github.com/matoanbach/simple-bank/db/sqlc"
 )
 
 type createAccountRequest struct {

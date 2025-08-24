@@ -4,8 +4,8 @@ import (
 	"database/sql"
 	"log"
 
-	"github.com/matoanbach/simple_bank/api"
-	db "github.com/matoanbach/simple_bank/db/sqlc"
+	"github.com/matoanbach/simple-bank/api"
+	db "github.com/matoanbach/simple-bank/db/sqlc"
 )
 
 const (

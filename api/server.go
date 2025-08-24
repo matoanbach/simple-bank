@@ -2,7 +2,7 @@ package api
 
 import (
 	"github.com/gin-gonic/gin"
-	db "github.com/matoanbach/simple_bank/db/sqlc"
+	db "github.com/matoanbach/simple-bank/db/sqlc"
 )
 
 type Server struct {
@@ -33,7 +33,7 @@ func errorResponse(err error) gin.H {
 func (server *Server) setupServer() {
 	router := gin.Default()
 
-	// //routers
+	//routers
 	// router.POST("/users", server.createUser)
 	// router.POST("/users/login", server.loginUser)
 	// router.POST("/tokens/renew_access", server.renewAccessToken)
