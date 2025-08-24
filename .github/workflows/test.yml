@@ -1,7 +1,7 @@
 name: Test Simple Bank
 on:
   push:
-    - main
+    branches: [ "main" ]
 
 jobs:
   test:
