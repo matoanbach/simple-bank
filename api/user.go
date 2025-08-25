@@ -98,6 +98,8 @@ func (server *Server) loginUser(ctx *gin.Context) {
 			ctx.JSON(http.StatusNotFound, errorResponse(err))
 			return
 		}
+		ctx.JSON(http.StatusInternalServerError, errorResponse(err))
+		return
 	}
 	err = util.CheckPassword(req.Password, user.HashedPassword)
 	if err != nil {
@@ -105,6 +107,7 @@ func (server *Server) loginUser(ctx *gin.Context) {
 		return
 	}
 
+	err = util.CheckPassword(req.Password, user.HashedPassword)
 	accessToken, accessPayload, err := server.tokenMaker.CreateToken(
 		user.Username,
 		server.config.AccessTokenDuration,
@@ -114,7 +117,7 @@ func (server *Server) loginUser(ctx *gin.Context) {
 		return
 	}
 
-	refreshToken, refreshPaccessPayload, err := server.tokenMaker.CreateToken(
+	refreshToken, refreshPayload, err := server.tokenMaker.CreateToken(
 		user.Username,
 		server.config.RefreshTokenDuration,
 	)
@@ -123,14 +126,22 @@ func (server *Server) loginUser(ctx *gin.Context) {
 		return
 	}
 	// create sessions
+	session, err := server.store.CreateSession(ctx, db.CreateSessionParams{
+		ID:           refreshPayload.ID,
+		Username:     user.Username,
+		RefreshToken: refreshToken,
+		UserAgent:    ctx.Request.UserAgent(),
+		ClientIp:     ctx.ClientIP(),
+		IsBlocked:    false,
+		ExpiresAt:    refreshPayload.ExpiredAt,
+	})
 
-	newUUID, _ := uuid.NewV4()
 	rsp := loginUserResponse{
-		SessionID:             newUUID,
+		SessionID:             uuid.UUID(session.ID),
 		AccessToken:           accessToken,
 		AccessTokenExpiresAt:  accessPayload.ExpiredAt,
 		RefreshToken:          refreshToken,
-		RefreshTokenExpiresAt: refreshPaccessPayload.ExpiredAt,
+		RefreshTokenExpiresAt: refreshPayload.ExpiredAt,
 		User:                  newUserResponse(user),
 	}
 
