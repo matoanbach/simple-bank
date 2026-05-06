@@ -1,0 +1,2285 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "mcp-excalidraw-server",
+  "elements": [
+    {
+      "id": "cloud-zone",
+      "type": "rectangle",
+      "x": 40,
+      "y": 40,
+      "width": 2360,
+      "height": 540,
+      "backgroundColor": "#e9ecef",
+      "strokeColor": "#868e96",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "text": "",
+      "fontSize": 20,
+      "fontFamily": 2,
+      "startArrowhead": "",
+      "endArrowhead": "",
+      "createdAt": "2026-05-06T22:29:15.121Z",
+      "updatedAt": "2026-05-06T22:29:15.121Z",
+      "version": 1
+    },
+    {
+      "id": "main-title",
+      "type": "text",
+      "x": 60,
+      "y": 55,
+      "width": 360,
+      "height": 30,
+      "backgroundColor": "transparent",
+      "strokeColor": "#1e1e1e",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "text": "simple-bank Architecture",
+      "fontSize": 28,
+      "fontFamily": 2,
+      "startArrowhead": "",
+      "endArrowhead": "",
+      "createdAt": "2026-05-06T22:29:15.121Z",
+      "updatedAt": "2026-05-06T22:29:15.121Z",
+      "version": 1
+    },
+    {
+      "id": "main-subtitle",
+      "type": "text",
+      "x": 60,
+      "y": 90,
+      "width": 980,
+      "height": 24,
+      "backgroundColor": "transparent",
+      "strokeColor": "#868e96",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "text": "Top: architecture and deployment story. Bottom: request path, data model, and transfer transaction flow.",
+      "fontSize": 16,
+      "fontFamily": 2,
+      "startArrowhead": "",
+      "endArrowhead": "",
+      "createdAt": "2026-05-06T22:29:15.122Z",
+      "updatedAt": "2026-05-06T22:29:15.122Z",
+      "version": 1
+    },
+    {
+      "id": "current-zone",
+      "type": "rectangle",
+      "x": 80,
+      "y": 130,
+      "width": 1080,
+      "height": 390,
+      "backgroundColor": "#ffd8a8",
+      "strokeColor": "#e8590c",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "text": "",
+      "fontSize": 20,
+      "fontFamily": 2,
+      "startArrowhead": "",
+      "endArrowhead": "",
+      "createdAt": "2026-05-06T22:29:15.122Z",
+      "updatedAt": "2026-05-06T22:29:15.122Z",
+      "version": 1
+    },
+    {
+      "id": "target-zone",
+      "type": "rectangle",
+      "x": 1240,
+      "y": 130,
+      "width": 1120,
+      "height": 390,
+      "backgroundColor": "#b2f2bb",
+      "strokeColor": "#2f9e44",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "text": "",
+      "fontSize": 20,
+      "fontFamily": 2,
+      "startArrowhead": "",
+      "endArrowhead": "",
+      "createdAt": "2026-05-06T22:29:15.122Z",
+      "updatedAt": "2026-05-06T22:29:15.122Z",
+      "version": 1
+    },
+    {
+      "id": "current-title",
+      "type": "text",
+      "x": 105,
+      "y": 145,
+      "width": 500,
+      "height": 24,
+      "backgroundColor": "transparent",
+      "strokeColor": "#1e1e1e",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "text": "Current runtime and CI (what the repo does today)",
+      "fontSize": 20,
+      "fontFamily": 2,
+      "startArrowhead": "",
+      "endArrowhead": "",
+      "createdAt": "2026-05-06T22:29:15.122Z",
+      "updatedAt": "2026-05-06T22:29:15.122Z",
+      "version": 1
+    },
+    {
+      "id": "target-title",
+      "type": "text",
+      "x": 1265,
+      "y": 145,
+      "width": 420,
+      "height": 24,
+      "backgroundColor": "transparent",
+      "strokeColor": "#1e1e1e",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "text": "Suggested cloud deployment shape",
+      "fontSize": 20,
+      "fontFamily": 2,
+      "startArrowhead": "",
+      "endArrowhead": "",
+      "createdAt": "2026-05-06T22:29:15.122Z",
+      "updatedAt": "2026-05-06T22:29:15.122Z",
+      "version": 1
+    },
+    {
+      "id": "current-runtime-label",
+      "type": "text",
+      "x": 110,
+      "y": 180,
+      "width": 120,
+      "height": 20,
+      "backgroundColor": "transparent",
+      "strokeColor": "#1e1e1e",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "text": "Runtime traffic",
+      "fontSize": 16,
+      "fontFamily": 2,
+      "startArrowhead": "",
+      "endArrowhead": "",
+      "createdAt": "2026-05-06T22:29:15.122Z",
+      "updatedAt": "2026-05-06T22:29:15.122Z",
+      "version": 1
+    },
+    {
+      "id": "current-delivery-label",
+      "type": "text",
+      "x": 110,
+      "y": 380,
+      "width": 130,
+      "height": 20,
+      "backgroundColor": "transparent",
+      "strokeColor": "#1e1e1e",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "text": "Delivery / CI",
+      "fontSize": 16,
+      "fontFamily": 2,
+      "startArrowhead": "",
+      "endArrowhead": "",
+      "createdAt": "2026-05-06T22:29:15.122Z",
+      "updatedAt": "2026-05-06T22:29:15.122Z",
+      "version": 1
+    },
+    {
+      "id": "current-client",
+      "type": "rectangle",
+      "x": 130,
+      "y": 220,
+      "width": 180,
+      "height": 70,
+      "backgroundColor": "#ffffff",
+      "strokeColor": "#1e1e1e",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "label": {
+        "text": "API Client\nor Browser"
+      },
+      "fontSize": 20,
+      "fontFamily": 2,
+      "startArrowhead": "",
+      "endArrowhead": "",
+      "createdAt": "2026-05-06T22:29:15.122Z",
+      "updatedAt": "2026-05-06T22:29:15.122Z",
+      "version": 1
+    },
+    {
+      "id": "current-api",
+      "type": "rectangle",
+      "x": 450,
+      "y": 205,
+      "width": 250,
+      "height": 90,
+      "backgroundColor": "#a5d8ff",
+      "strokeColor": "#1971c2",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "label": {
+        "text": "Go API Service\nGin router + handlers"
+      },
+      "fontSize": 20,
+      "fontFamily": 2,
+      "startArrowhead": "",
+      "endArrowhead": "",
+      "createdAt": "2026-05-06T22:29:15.122Z",
+      "updatedAt": "2026-05-06T22:29:15.122Z",
+      "version": 1
+    },
+    {
+      "id": "current-db",
+      "type": "rectangle",
+      "x": 820,
+      "y": 210,
+      "width": 230,
+      "height": 80,
+      "backgroundColor": "#99e9f2",
+      "strokeColor": "#0c8599",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "label": {
+        "text": "PostgreSQL\naccounts + transfers"
+      },
+      "fontSize": 20,
+      "fontFamily": 2,
+      "startArrowhead": "",
+      "endArrowhead": "",
+      "createdAt": "2026-05-06T22:29:15.122Z",
+      "updatedAt": "2026-05-06T22:29:15.122Z",
+      "version": 1
+    },
+    {
+      "id": "current-config",
+      "type": "rectangle",
+      "x": 470,
+      "y": 335,
+      "width": 210,
+      "height": 60,
+      "backgroundColor": "#ffffff",
+      "strokeColor": "#0c8599",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "label": {
+        "text": "app.env / config"
+      },
+      "fontSize": 18,
+      "fontFamily": 2,
+      "startArrowhead": "",
+      "endArrowhead": "",
+      "createdAt": "2026-05-06T22:29:15.122Z",
+      "updatedAt": "2026-05-06T22:29:15.122Z",
+      "version": 1
+    },
+    {
+      "id": "jwt-note",
+      "type": "text",
+      "x": 480,
+      "y": 175,
+      "width": 220,
+      "height": 20,
+      "backgroundColor": "transparent",
+      "strokeColor": "#9c36b5",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "text": "JWT protects account routes",
+      "fontSize": 16,
+      "fontFamily": 2,
+      "startArrowhead": "",
+      "endArrowhead": "",
+      "createdAt": "2026-05-06T22:29:15.122Z",
+      "updatedAt": "2026-05-06T22:29:15.122Z",
+      "version": 1
+    },
+    {
+      "id": "repo-box",
+      "type": "rectangle",
+      "x": 130,
+      "y": 415,
+      "width": 200,
+      "height": 70,
+      "backgroundColor": "#ffffff",
+      "strokeColor": "#1e1e1e",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "label": {
+        "text": "GitHub Repo"
+      },
+      "fontSize": 20,
+      "fontFamily": 2,
+      "startArrowhead": "",
+      "endArrowhead": "",
+      "createdAt": "2026-05-06T22:29:15.122Z",
+      "updatedAt": "2026-05-06T22:29:15.122Z",
+      "version": 1
+    },
+    {
+      "id": "gha-box",
+      "type": "rectangle",
+      "x": 420,
+      "y": 415,
+      "width": 240,
+      "height": 70,
+      "backgroundColor": "#ffffff",
+      "strokeColor": "#e8590c",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "label": {
+        "text": "GitHub Actions CI\nmigrate + go test"
+      },
+      "fontSize": 20,
+      "fontFamily": 2,
+      "startArrowhead": "",
+      "endArrowhead": "",
+      "createdAt": "2026-05-06T22:29:15.122Z",
+      "updatedAt": "2026-05-06T22:29:15.122Z",
+      "version": 1
+    },
+    {
+      "id": "ci-db-box",
+      "type": "rectangle",
+      "x": 790,
+      "y": 415,
+      "width": 220,
+      "height": 70,
+      "backgroundColor": "#ffffff",
+      "strokeColor": "#0c8599",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "label": {
+        "text": "CI Postgres service"
+      },
+      "fontSize": 20,
+      "fontFamily": 2,
+      "startArrowhead": "",
+      "endArrowhead": "",
+      "createdAt": "2026-05-06T22:29:15.122Z",
+      "updatedAt": "2026-05-06T22:29:15.122Z",
+      "version": 1
+    },
+    {
+      "id": "target-users",
+      "type": "rectangle",
+      "x": 1280,
+      "y": 220,
+      "width": 180,
+      "height": 70,
+      "backgroundColor": "#ffffff",
+      "strokeColor": "#1e1e1e",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "label": {
+        "text": "Internet Users"
+      },
+      "fontSize": 20,
+      "fontFamily": 2,
+      "startArrowhead": "",
+      "endArrowhead": "",
+      "createdAt": "2026-05-06T22:29:15.122Z",
+      "updatedAt": "2026-05-06T22:29:15.122Z",
+      "version": 1
+    },
+    {
+      "id": "lb-box",
+      "type": "rectangle",
+      "x": 1560,
+      "y": 205,
+      "width": 220,
+      "height": 80,
+      "backgroundColor": "#a5d8ff",
+      "strokeColor": "#1971c2",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "label": {
+        "text": "Load Balancer /\nIngress"
+      },
+      "fontSize": 20,
+      "fontFamily": 2,
+      "startArrowhead": "",
+      "endArrowhead": "",
+      "createdAt": "2026-05-06T22:29:15.122Z",
+      "updatedAt": "2026-05-06T22:29:15.122Z",
+      "version": 1
+    },
+    {
+      "id": "app-box",
+      "type": "rectangle",
+      "x": 1880,
+      "y": 190,
+      "width": 260,
+      "height": 110,
+      "backgroundColor": "#eebefa",
+      "strokeColor": "#9c36b5",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "label": {
+        "text": "API App Service\ncontainer or pods"
+      },
+      "fontSize": 22,
+      "fontFamily": 2,
+      "startArrowhead": "",
+      "endArrowhead": "",
+      "createdAt": "2026-05-06T22:29:15.122Z",
+      "updatedAt": "2026-05-06T22:29:15.122Z",
+      "version": 1
+    },
+    {
+      "id": "managed-db-box",
+      "type": "rectangle",
+      "x": 1885,
+      "y": 340,
+      "width": 240,
+      "height": 80,
+      "backgroundColor": "#99e9f2",
+      "strokeColor": "#0c8599",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "label": {
+        "text": "Managed PostgreSQL"
+      },
+      "fontSize": 20,
+      "fontFamily": 2,
+      "startArrowhead": "",
+      "endArrowhead": "",
+      "createdAt": "2026-05-06T22:29:15.122Z",
+      "updatedAt": "2026-05-06T22:29:15.122Z",
+      "version": 1
+    },
+    {
+      "id": "secrets-box",
+      "type": "rectangle",
+      "x": 1560,
+      "y": 345,
+      "width": 220,
+      "height": 60,
+      "backgroundColor": "#ffffff",
+      "strokeColor": "#0c8599",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "label": {
+        "text": "Secrets / config"
+      },
+      "fontSize": 18,
+      "fontFamily": 2,
+      "startArrowhead": "",
+      "endArrowhead": "",
+      "createdAt": "2026-05-06T22:29:15.122Z",
+      "updatedAt": "2026-05-06T22:29:15.122Z",
+      "version": 1
+    },
+    {
+      "id": "deploy-gha-box",
+      "type": "rectangle",
+      "x": 1280,
+      "y": 425,
+      "width": 190,
+      "height": 70,
+      "backgroundColor": "#ffffff",
+      "strokeColor": "#e8590c",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "label": {
+        "text": "GitHub Actions"
+      },
+      "fontSize": 20,
+      "fontFamily": 2,
+      "startArrowhead": "",
+      "endArrowhead": "",
+      "createdAt": "2026-05-06T22:29:15.122Z",
+      "updatedAt": "2026-05-06T22:29:15.122Z",
+      "version": 1
+    },
+    {
+      "id": "registry-box",
+      "type": "rectangle",
+      "x": 1560,
+      "y": 425,
+      "width": 220,
+      "height": 70,
+      "backgroundColor": "#ffd8a8",
+      "strokeColor": "#e8590c",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "label": {
+        "text": "Container Registry"
+      },
+      "fontSize": 20,
+      "fontFamily": 2,
+      "startArrowhead": "",
+      "endArrowhead": "",
+      "createdAt": "2026-05-06T22:29:15.122Z",
+      "updatedAt": "2026-05-06T22:29:15.122Z",
+      "version": 1
+    },
+    {
+      "id": "target-note",
+      "type": "text",
+      "x": 1890,
+      "y": 155,
+      "width": 250,
+      "height": 20,
+      "backgroundColor": "transparent",
+      "strokeColor": "#868e96",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "text": "Use this when you want cloud hosting",
+      "fontSize": 16,
+      "fontFamily": 2,
+      "startArrowhead": "",
+      "endArrowhead": "",
+      "createdAt": "2026-05-06T22:29:15.122Z",
+      "updatedAt": "2026-05-06T22:29:15.122Z",
+      "version": 1
+    },
+    {
+      "id": "system-zone",
+      "type": "rectangle",
+      "x": 40,
+      "y": 620,
+      "width": 2360,
+      "height": 760,
+      "backgroundColor": "#e9ecef",
+      "strokeColor": "#868e96",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "text": "",
+      "fontSize": 20,
+      "fontFamily": 2,
+      "startArrowhead": "",
+      "endArrowhead": "",
+      "createdAt": "2026-05-06T22:29:15.122Z",
+      "updatedAt": "2026-05-06T22:29:15.122Z",
+      "version": 1
+    },
+    {
+      "id": "system-title",
+      "type": "text",
+      "x": 60,
+      "y": 635,
+      "width": 340,
+      "height": 28,
+      "backgroundColor": "transparent",
+      "strokeColor": "#1e1e1e",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "text": "System Design",
+      "fontSize": 28,
+      "fontFamily": 2,
+      "startArrowhead": "",
+      "endArrowhead": "",
+      "createdAt": "2026-05-06T22:29:15.122Z",
+      "updatedAt": "2026-05-06T22:29:15.122Z",
+      "version": 1
+    },
+    {
+      "id": "request-zone",
+      "type": "rectangle",
+      "x": 80,
+      "y": 700,
+      "width": 1270,
+      "height": 240,
+      "backgroundColor": "#a5d8ff",
+      "strokeColor": "#1971c2",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "text": "",
+      "fontSize": 20,
+      "fontFamily": 2,
+      "startArrowhead": "",
+      "endArrowhead": "",
+      "createdAt": "2026-05-06T22:29:15.122Z",
+      "updatedAt": "2026-05-06T22:29:15.122Z",
+      "version": 1
+    },
+    {
+      "id": "model-zone",
+      "type": "rectangle",
+      "x": 1390,
+      "y": 700,
+      "width": 970,
+      "height": 240,
+      "backgroundColor": "#99e9f2",
+      "strokeColor": "#0c8599",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "text": "",
+      "fontSize": 20,
+      "fontFamily": 2,
+      "startArrowhead": "",
+      "endArrowhead": "",
+      "createdAt": "2026-05-06T22:29:15.122Z",
+      "updatedAt": "2026-05-06T22:29:15.122Z",
+      "version": 1
+    },
+    {
+      "id": "transfer-zone",
+      "type": "rectangle",
+      "x": 80,
+      "y": 980,
+      "width": 2280,
+      "height": 320,
+      "backgroundColor": "#eebefa",
+      "strokeColor": "#9c36b5",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "text": "",
+      "fontSize": 20,
+      "fontFamily": 2,
+      "startArrowhead": "",
+      "endArrowhead": "",
+      "createdAt": "2026-05-06T22:29:15.122Z",
+      "updatedAt": "2026-05-06T22:29:15.122Z",
+      "version": 1
+    },
+    {
+      "id": "request-title",
+      "type": "text",
+      "x": 105,
+      "y": 715,
+      "width": 250,
+      "height": 24,
+      "backgroundColor": "transparent",
+      "strokeColor": "#1e1e1e",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "text": "Request handling path",
+      "fontSize": 20,
+      "fontFamily": 2,
+      "startArrowhead": "",
+      "endArrowhead": "",
+      "createdAt": "2026-05-06T22:29:15.122Z",
+      "updatedAt": "2026-05-06T22:29:15.122Z",
+      "version": 1
+    },
+    {
+      "id": "model-title",
+      "type": "text",
+      "x": 1415,
+      "y": 715,
+      "width": 210,
+      "height": 24,
+      "backgroundColor": "transparent",
+      "strokeColor": "#1e1e1e",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "text": "Core data model",
+      "fontSize": 20,
+      "fontFamily": 2,
+      "startArrowhead": "",
+      "endArrowhead": "",
+      "createdAt": "2026-05-06T22:29:15.122Z",
+      "updatedAt": "2026-05-06T22:29:15.122Z",
+      "version": 1
+    },
+    {
+      "id": "transfer-title",
+      "type": "text",
+      "x": 105,
+      "y": 995,
+      "width": 360,
+      "height": 24,
+      "backgroundColor": "transparent",
+      "strokeColor": "#1e1e1e",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "text": "Transfer transaction flow",
+      "fontSize": 20,
+      "fontFamily": 2,
+      "startArrowhead": "",
+      "endArrowhead": "",
+      "createdAt": "2026-05-06T22:29:15.122Z",
+      "updatedAt": "2026-05-06T22:29:15.122Z",
+      "version": 1
+    },
+    {
+      "id": "public-routes",
+      "type": "rectangle",
+      "x": 280,
+      "y": 745,
+      "width": 250,
+      "height": 40,
+      "backgroundColor": "#ffffff",
+      "strokeColor": "#2f9e44",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "label": {
+        "text": "Public: /users, /users/login"
+      },
+      "fontSize": 16,
+      "fontFamily": 2,
+      "startArrowhead": "",
+      "endArrowhead": "",
+      "createdAt": "2026-05-06T22:29:15.122Z",
+      "updatedAt": "2026-05-06T22:29:15.122Z",
+      "version": 1
+    },
+    {
+      "id": "protected-routes",
+      "type": "rectangle",
+      "x": 560,
+      "y": 745,
+      "width": 380,
+      "height": 40,
+      "backgroundColor": "#ffffff",
+      "strokeColor": "#9c36b5",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "label": {
+        "text": "Protected: /accounts, /accounts/:id, /transfers"
+      },
+      "fontSize": 16,
+      "fontFamily": 2,
+      "startArrowhead": "",
+      "endArrowhead": "",
+      "createdAt": "2026-05-06T22:29:15.122Z",
+      "updatedAt": "2026-05-06T22:29:15.122Z",
+      "version": 1
+    },
+    {
+      "id": "req-client",
+      "type": "rectangle",
+      "x": 110,
+      "y": 800,
+      "width": 140,
+      "height": 70,
+      "backgroundColor": "#ffffff",
+      "strokeColor": "#1e1e1e",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "label": {
+        "text": "Client"
+      },
+      "fontSize": 20,
+      "fontFamily": 2,
+      "startArrowhead": "",
+      "endArrowhead": "",
+      "createdAt": "2026-05-06T22:29:15.123Z",
+      "updatedAt": "2026-05-06T22:29:15.123Z",
+      "version": 1
+    },
+    {
+      "id": "req-router",
+      "type": "rectangle",
+      "x": 290,
+      "y": 795,
+      "width": 170,
+      "height": 80,
+      "backgroundColor": "#ffffff",
+      "strokeColor": "#1971c2",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "label": {
+        "text": "Gin Router"
+      },
+      "fontSize": 20,
+      "fontFamily": 2,
+      "startArrowhead": "",
+      "endArrowhead": "",
+      "createdAt": "2026-05-06T22:29:15.123Z",
+      "updatedAt": "2026-05-06T22:29:15.123Z",
+      "version": 1
+    },
+    {
+      "id": "req-middleware",
+      "type": "rectangle",
+      "x": 500,
+      "y": 795,
+      "width": 190,
+      "height": 80,
+      "backgroundColor": "#ffffff",
+      "strokeColor": "#9c36b5",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "label": {
+        "text": "JWT auth\nmiddleware"
+      },
+      "fontSize": 20,
+      "fontFamily": 2,
+      "startArrowhead": "",
+      "endArrowhead": "",
+      "createdAt": "2026-05-06T22:29:15.123Z",
+      "updatedAt": "2026-05-06T22:29:15.123Z",
+      "version": 1
+    },
+    {
+      "id": "req-handlers",
+      "type": "rectangle",
+      "x": 730,
+      "y": 795,
+      "width": 200,
+      "height": 80,
+      "backgroundColor": "#ffffff",
+      "strokeColor": "#9c36b5",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "label": {
+        "text": "Handlers\nusers, accounts,\ntransfers"
+      },
+      "fontSize": 18,
+      "fontFamily": 2,
+      "startArrowhead": "",
+      "endArrowhead": "",
+      "createdAt": "2026-05-06T22:29:15.123Z",
+      "updatedAt": "2026-05-06T22:29:15.123Z",
+      "version": 1
+    },
+    {
+      "id": "req-store",
+      "type": "rectangle",
+      "x": 970,
+      "y": 795,
+      "width": 140,
+      "height": 80,
+      "backgroundColor": "#ffffff",
+      "strokeColor": "#e8590c",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "label": {
+        "text": "Store /\nTx"
+      },
+      "fontSize": 20,
+      "fontFamily": 2,
+      "startArrowhead": "",
+      "endArrowhead": "",
+      "createdAt": "2026-05-06T22:29:15.123Z",
+      "updatedAt": "2026-05-06T22:29:15.123Z",
+      "version": 1
+    },
+    {
+      "id": "req-sqlc",
+      "type": "rectangle",
+      "x": 1150,
+      "y": 795,
+      "width": 160,
+      "height": 80,
+      "backgroundColor": "#ffffff",
+      "strokeColor": "#0c8599",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "label": {
+        "text": "sqlc query\nlayer"
+      },
+      "fontSize": 20,
+      "fontFamily": 2,
+      "startArrowhead": "",
+      "endArrowhead": "",
+      "createdAt": "2026-05-06T22:29:15.123Z",
+      "updatedAt": "2026-05-06T22:29:15.123Z",
+      "version": 1
+    },
+    {
+      "id": "pg-core",
+      "type": "rectangle",
+      "x": 1420,
+      "y": 780,
+      "width": 180,
+      "height": 90,
+      "backgroundColor": "#ffffff",
+      "strokeColor": "#0c8599",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "label": {
+        "text": "PostgreSQL\nsimple_bank"
+      },
+      "fontSize": 22,
+      "fontFamily": 2,
+      "startArrowhead": "",
+      "endArrowhead": "",
+      "createdAt": "2026-05-06T22:29:15.123Z",
+      "updatedAt": "2026-05-06T22:29:15.123Z",
+      "version": 1
+    },
+    {
+      "id": "users-table",
+      "type": "rectangle",
+      "x": 1660,
+      "y": 735,
+      "width": 160,
+      "height": 60,
+      "backgroundColor": "#ffffff",
+      "strokeColor": "#2f9e44",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "label": {
+        "text": "users"
+      },
+      "fontSize": 22,
+      "fontFamily": 2,
+      "startArrowhead": "",
+      "endArrowhead": "",
+      "createdAt": "2026-05-06T22:29:15.123Z",
+      "updatedAt": "2026-05-06T22:29:15.123Z",
+      "version": 1
+    },
+    {
+      "id": "accounts-table",
+      "type": "rectangle",
+      "x": 1660,
+      "y": 825,
+      "width": 170,
+      "height": 60,
+      "backgroundColor": "#ffffff",
+      "strokeColor": "#1971c2",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "label": {
+        "text": "accounts"
+      },
+      "fontSize": 22,
+      "fontFamily": 2,
+      "startArrowhead": "",
+      "endArrowhead": "",
+      "createdAt": "2026-05-06T22:29:15.123Z",
+      "updatedAt": "2026-05-06T22:29:15.123Z",
+      "version": 1
+    },
+    {
+      "id": "sessions-table",
+      "type": "rectangle",
+      "x": 1860,
+      "y": 735,
+      "width": 170,
+      "height": 60,
+      "backgroundColor": "#ffffff",
+      "strokeColor": "#9c36b5",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "label": {
+        "text": "sessions"
+      },
+      "fontSize": 22,
+      "fontFamily": 2,
+      "startArrowhead": "",
+      "endArrowhead": "",
+      "createdAt": "2026-05-06T22:29:15.123Z",
+      "updatedAt": "2026-05-06T22:29:15.123Z",
+      "version": 1
+    },
+    {
+      "id": "entries-table",
+      "type": "rectangle",
+      "x": 2060,
+      "y": 735,
+      "width": 160,
+      "height": 60,
+      "backgroundColor": "#ffffff",
+      "strokeColor": "#e8590c",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "label": {
+        "text": "entries"
+      },
+      "fontSize": 22,
+      "fontFamily": 2,
+      "startArrowhead": "",
+      "endArrowhead": "",
+      "createdAt": "2026-05-06T22:29:15.123Z",
+      "updatedAt": "2026-05-06T22:29:15.123Z",
+      "version": 1
+    },
+    {
+      "id": "transfers-table",
+      "type": "rectangle",
+      "x": 2060,
+      "y": 825,
+      "width": 170,
+      "height": 60,
+      "backgroundColor": "#ffffff",
+      "strokeColor": "#e03131",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "label": {
+        "text": "transfers"
+      },
+      "fontSize": 22,
+      "fontFamily": 2,
+      "startArrowhead": "",
+      "endArrowhead": "",
+      "createdAt": "2026-05-06T22:29:15.123Z",
+      "updatedAt": "2026-05-06T22:29:15.123Z",
+      "version": 1
+    },
+    {
+      "id": "tx-step1",
+      "type": "rectangle",
+      "x": 120,
+      "y": 1060,
+      "width": 280,
+      "height": 70,
+      "backgroundColor": "#ffffff",
+      "strokeColor": "#1971c2",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "label": {
+        "text": "1. Validate source and target accounts"
+      },
+      "fontSize": 20,
+      "fontFamily": 2,
+      "startArrowhead": "",
+      "endArrowhead": "",
+      "createdAt": "2026-05-06T22:29:15.123Z",
+      "updatedAt": "2026-05-06T22:29:15.123Z",
+      "version": 1
+    },
+    {
+      "id": "tx-step2",
+      "type": "rectangle",
+      "x": 470,
+      "y": 1060,
+      "width": 280,
+      "height": 70,
+      "backgroundColor": "#ffffff",
+      "strokeColor": "#9c36b5",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "label": {
+        "text": "2. Check account ownership via JWT user"
+      },
+      "fontSize": 20,
+      "fontFamily": 2,
+      "startArrowhead": "",
+      "endArrowhead": "",
+      "createdAt": "2026-05-06T22:29:15.123Z",
+      "updatedAt": "2026-05-06T22:29:15.123Z",
+      "version": 1
+    },
+    {
+      "id": "tx-step3",
+      "type": "rectangle",
+      "x": 820,
+      "y": 1060,
+      "width": 280,
+      "height": 70,
+      "backgroundColor": "#ffffff",
+      "strokeColor": "#e03131",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "label": {
+        "text": "3. Create transfer row"
+      },
+      "fontSize": 20,
+      "fontFamily": 2,
+      "startArrowhead": "",
+      "endArrowhead": "",
+      "createdAt": "2026-05-06T22:29:15.123Z",
+      "updatedAt": "2026-05-06T22:29:15.123Z",
+      "version": 1
+    },
+    {
+      "id": "tx-step4",
+      "type": "rectangle",
+      "x": 1170,
+      "y": 1060,
+      "width": 300,
+      "height": 70,
+      "backgroundColor": "#ffffff",
+      "strokeColor": "#e8590c",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "label": {
+        "text": "4. Create debit and credit entries"
+      },
+      "fontSize": 20,
+      "fontFamily": 2,
+      "startArrowhead": "",
+      "endArrowhead": "",
+      "createdAt": "2026-05-06T22:29:15.123Z",
+      "updatedAt": "2026-05-06T22:29:15.123Z",
+      "version": 1
+    },
+    {
+      "id": "tx-step5",
+      "type": "rectangle",
+      "x": 1540,
+      "y": 1060,
+      "width": 320,
+      "height": 70,
+      "backgroundColor": "#ffffff",
+      "strokeColor": "#0c8599",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "label": {
+        "text": "5. Update both balances in one DB transaction"
+      },
+      "fontSize": 20,
+      "fontFamily": 2,
+      "startArrowhead": "",
+      "endArrowhead": "",
+      "createdAt": "2026-05-06T22:29:15.123Z",
+      "updatedAt": "2026-05-06T22:29:15.123Z",
+      "version": 1
+    },
+    {
+      "id": "tx-step6",
+      "type": "rectangle",
+      "x": 1930,
+      "y": 1060,
+      "width": 280,
+      "height": 70,
+      "backgroundColor": "#ffffff",
+      "strokeColor": "#2f9e44",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "label": {
+        "text": "6. Commit and return transfer result"
+      },
+      "fontSize": 20,
+      "fontFamily": 2,
+      "startArrowhead": "",
+      "endArrowhead": "",
+      "createdAt": "2026-05-06T22:29:15.123Z",
+      "updatedAt": "2026-05-06T22:29:15.123Z",
+      "version": 1
+    },
+    {
+      "id": "tx-note",
+      "type": "rectangle",
+      "x": 720,
+      "y": 1175,
+      "width": 980,
+      "height": 70,
+      "backgroundColor": "#ffd8a8",
+      "strokeColor": "#e8590c",
+      "strokeWidth": 2,
+      "strokeStyle": "dashed",
+      "roughness": 1,
+      "opacity": 100,
+      "label": {
+        "text": "Deadlock reduction idea: update accounts in a stable order so concurrent transfers are less likely to block each other."
+      },
+      "fontSize": 20,
+      "fontFamily": 2,
+      "startArrowhead": "",
+      "endArrowhead": "",
+      "createdAt": "2026-05-06T22:29:15.123Z",
+      "updatedAt": "2026-05-06T22:29:15.123Z",
+      "version": 1
+    },
+    {
+      "id": "arrow-current-client-api",
+      "type": "arrow",
+      "x": 317.99920662468196,
+      "y": 253.61972948415942,
+      "width": 0,
+      "height": 0,
+      "backgroundColor": "transparent",
+      "strokeColor": "#1e1e1e",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "label": {
+        "text": "HTTP"
+      },
+      "fontSize": 16,
+      "fontFamily": 2,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          124.00158675063608,
+          -1.746501221839992
+        ]
+      ],
+      "start": {
+        "id": "current-client"
+      },
+      "end": {
+        "id": "current-api"
+      },
+      "startArrowhead": "",
+      "endArrowhead": "arrow",
+      "createdAt": "2026-05-06T22:29:15.124Z",
+      "updatedAt": "2026-05-06T22:29:15.124Z",
+      "version": 1
+    },
+    {
+      "id": "arrow-current-api-db",
+      "type": "arrow",
+      "x": 708,
+      "y": 250,
+      "width": 0,
+      "height": 0,
+      "backgroundColor": "transparent",
+      "strokeColor": "#1971c2",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "label": {
+        "text": "SQL"
+      },
+      "fontSize": 16,
+      "fontFamily": 2,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          104,
+          0
+        ]
+      ],
+      "start": {
+        "id": "current-api"
+      },
+      "end": {
+        "id": "current-db"
+      },
+      "startArrowhead": "",
+      "endArrowhead": "arrow",
+      "createdAt": "2026-05-06T22:29:15.124Z",
+      "updatedAt": "2026-05-06T22:29:15.124Z",
+      "version": 1
+    },
+    {
+      "id": "arrow-current-config-api",
+      "type": "arrow",
+      "x": 575,
+      "y": 327,
+      "width": 0,
+      "height": 0,
+      "backgroundColor": "transparent",
+      "strokeColor": "#0c8599",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "text": "",
+      "fontSize": 16,
+      "fontFamily": 2,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          -24
+        ]
+      ],
+      "start": {
+        "id": "current-config"
+      },
+      "end": {
+        "id": "current-api"
+      },
+      "startArrowhead": "",
+      "endArrowhead": "arrow",
+      "createdAt": "2026-05-06T22:29:15.124Z",
+      "updatedAt": "2026-05-06T22:29:15.124Z",
+      "version": 1
+    },
+    {
+      "id": "arrow-repo-gha",
+      "type": "arrow",
+      "x": 338,
+      "y": 450,
+      "width": 0,
+      "height": 0,
+      "backgroundColor": "transparent",
+      "strokeColor": "#1e1e1e",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "label": {
+        "text": "push"
+      },
+      "fontSize": 16,
+      "fontFamily": 2,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          74,
+          0
+        ]
+      ],
+      "start": {
+        "id": "repo-box"
+      },
+      "end": {
+        "id": "gha-box"
+      },
+      "startArrowhead": "",
+      "endArrowhead": "arrow",
+      "createdAt": "2026-05-06T22:29:15.124Z",
+      "updatedAt": "2026-05-06T22:29:15.124Z",
+      "version": 1
+    },
+    {
+      "id": "arrow-gha-cidb",
+      "type": "arrow",
+      "x": 668,
+      "y": 450,
+      "width": 0,
+      "height": 0,
+      "backgroundColor": "transparent",
+      "strokeColor": "#e8590c",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "label": {
+        "text": "test"
+      },
+      "fontSize": 16,
+      "fontFamily": 2,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          114,
+          0
+        ]
+      ],
+      "start": {
+        "id": "gha-box"
+      },
+      "end": {
+        "id": "ci-db-box"
+      },
+      "startArrowhead": "",
+      "endArrowhead": "arrow",
+      "createdAt": "2026-05-06T22:29:15.124Z",
+      "updatedAt": "2026-05-06T22:29:15.124Z",
+      "version": 1
+    },
+    {
+      "id": "arrow-target-users-lb",
+      "type": "arrow",
+      "x": 1467.9955592558333,
+      "y": 251.7334813581389,
+      "width": 0,
+      "height": 0,
+      "backgroundColor": "transparent",
+      "strokeColor": "#1e1e1e",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "label": {
+        "text": "HTTPS"
+      },
+      "fontSize": 16,
+      "fontFamily": 2,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          84.00888148833337,
+          -2.80029604961112
+        ]
+      ],
+      "start": {
+        "id": "target-users"
+      },
+      "end": {
+        "id": "lb-box"
+      },
+      "startArrowhead": "",
+      "endArrowhead": "arrow",
+      "createdAt": "2026-05-06T22:29:15.124Z",
+      "updatedAt": "2026-05-06T22:29:15.124Z",
+      "version": 1
+    },
+    {
+      "id": "arrow-lb-app",
+      "type": "arrow",
+      "x": 1788,
+      "y": 245,
+      "width": 0,
+      "height": 0,
+      "backgroundColor": "transparent",
+      "strokeColor": "#1971c2",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "label": {
+        "text": "routes"
+      },
+      "fontSize": 16,
+      "fontFamily": 2,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          84,
+          2.842170943040401e-14
+        ]
+      ],
+      "start": {
+        "id": "lb-box"
+      },
+      "end": {
+        "id": "app-box"
+      },
+      "startArrowhead": "",
+      "endArrowhead": "arrow",
+      "createdAt": "2026-05-06T22:29:15.124Z",
+      "updatedAt": "2026-05-06T22:29:15.124Z",
+      "version": 1
+    },
+    {
+      "id": "arrow-app-manageddb",
+      "type": "arrow",
+      "x": 2007.666869678884,
+      "y": 307.99451867013414,
+      "width": 0,
+      "height": 0,
+      "backgroundColor": "transparent",
+      "strokeColor": "#0c8599",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "label": {
+        "text": "SQL"
+      },
+      "fontSize": 16,
+      "fontFamily": 2,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          -0.8892949133235106,
+          24.010962659731717
+        ]
+      ],
+      "start": {
+        "id": "app-box"
+      },
+      "end": {
+        "id": "managed-db-box"
+      },
+      "startArrowhead": "",
+      "endArrowhead": "arrow",
+      "createdAt": "2026-05-06T22:29:15.124Z",
+      "updatedAt": "2026-05-06T22:29:15.124Z",
+      "version": 1
+    },
+    {
+      "id": "arrow-secrets-app",
+      "type": "arrow",
+      "x": 1755.9339531403473,
+      "y": 342.14290026986725,
+      "width": 0,
+      "height": 0,
+      "backgroundColor": "transparent",
+      "strokeColor": "#0c8599",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "text": "",
+      "fontSize": 16,
+      "fontFamily": 2,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          116.593632180844,
+          -44.57991818679335
+        ]
+      ],
+      "start": {
+        "id": "secrets-box"
+      },
+      "end": {
+        "id": "app-box"
+      },
+      "startArrowhead": "",
+      "endArrowhead": "arrow",
+      "createdAt": "2026-05-06T22:29:15.124Z",
+      "updatedAt": "2026-05-06T22:29:15.124Z",
+      "version": 1
+    },
+    {
+      "id": "arrow-deploy-registry",
+      "type": "arrow",
+      "x": 1478,
+      "y": 460,
+      "width": 0,
+      "height": 0,
+      "backgroundColor": "transparent",
+      "strokeColor": "#e8590c",
+      "strokeWidth": 2,
+      "strokeStyle": "dashed",
+      "roughness": 1,
+      "opacity": 100,
+      "label": {
+        "text": "build"
+      },
+      "fontSize": 16,
+      "fontFamily": 2,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          74,
+          0
+        ]
+      ],
+      "start": {
+        "id": "deploy-gha-box"
+      },
+      "end": {
+        "id": "registry-box"
+      },
+      "startArrowhead": "",
+      "endArrowhead": "arrow",
+      "createdAt": "2026-05-06T22:29:15.124Z",
+      "updatedAt": "2026-05-06T22:29:15.124Z",
+      "version": 1
+    },
+    {
+      "id": "arrow-registry-app",
+      "type": "arrow",
+      "x": 1732.1103845984683,
+      "y": 420.7243156215568,
+      "width": 0,
+      "height": 0,
+      "backgroundColor": "transparent",
+      "strokeColor": "#e8590c",
+      "strokeWidth": 2,
+      "strokeStyle": "dashed",
+      "roughness": 1,
+      "opacity": 100,
+      "label": {
+        "text": "deploy"
+      },
+      "fontSize": 16,
+      "fontFamily": 2,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          184.15132382631919,
+          -116.4486312431136
+        ]
+      ],
+      "start": {
+        "id": "registry-box"
+      },
+      "end": {
+        "id": "app-box"
+      },
+      "startArrowhead": "",
+      "endArrowhead": "arrow",
+      "createdAt": "2026-05-06T22:29:15.124Z",
+      "updatedAt": "2026-05-06T22:29:15.124Z",
+      "version": 1
+    },
+    {
+      "id": "arrow-req-client-router",
+      "type": "arrow",
+      "x": 258,
+      "y": 835,
+      "width": 0,
+      "height": 0,
+      "backgroundColor": "transparent",
+      "strokeColor": "#1e1e1e",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "text": "",
+      "fontSize": 16,
+      "fontFamily": 2,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          24,
+          0
+        ]
+      ],
+      "start": {
+        "id": "req-client"
+      },
+      "end": {
+        "id": "req-router"
+      },
+      "startArrowhead": "",
+      "endArrowhead": "arrow",
+      "createdAt": "2026-05-06T22:29:15.124Z",
+      "updatedAt": "2026-05-06T22:29:15.124Z",
+      "version": 1
+    },
+    {
+      "id": "arrow-req-router-mw",
+      "type": "arrow",
+      "x": 468,
+      "y": 835,
+      "width": 0,
+      "height": 0,
+      "backgroundColor": "transparent",
+      "strokeColor": "#1971c2",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "text": "",
+      "fontSize": 16,
+      "fontFamily": 2,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          24,
+          0
+        ]
+      ],
+      "start": {
+        "id": "req-router"
+      },
+      "end": {
+        "id": "req-middleware"
+      },
+      "startArrowhead": "",
+      "endArrowhead": "arrow",
+      "createdAt": "2026-05-06T22:29:15.124Z",
+      "updatedAt": "2026-05-06T22:29:15.124Z",
+      "version": 1
+    },
+    {
+      "id": "arrow-req-mw-handlers",
+      "type": "arrow",
+      "x": 698,
+      "y": 835,
+      "width": 0,
+      "height": 0,
+      "backgroundColor": "transparent",
+      "strokeColor": "#9c36b5",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "text": "",
+      "fontSize": 16,
+      "fontFamily": 2,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          24,
+          0
+        ]
+      ],
+      "start": {
+        "id": "req-middleware"
+      },
+      "end": {
+        "id": "req-handlers"
+      },
+      "startArrowhead": "",
+      "endArrowhead": "arrow",
+      "createdAt": "2026-05-06T22:29:15.124Z",
+      "updatedAt": "2026-05-06T22:29:15.124Z",
+      "version": 1
+    },
+    {
+      "id": "arrow-req-handlers-store",
+      "type": "arrow",
+      "x": 938,
+      "y": 835,
+      "width": 0,
+      "height": 0,
+      "backgroundColor": "transparent",
+      "strokeColor": "#9c36b5",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "text": "",
+      "fontSize": 16,
+      "fontFamily": 2,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          24,
+          0
+        ]
+      ],
+      "start": {
+        "id": "req-handlers"
+      },
+      "end": {
+        "id": "req-store"
+      },
+      "startArrowhead": "",
+      "endArrowhead": "arrow",
+      "createdAt": "2026-05-06T22:29:15.124Z",
+      "updatedAt": "2026-05-06T22:29:15.124Z",
+      "version": 1
+    },
+    {
+      "id": "arrow-req-store-sqlc",
+      "type": "arrow",
+      "x": 1118,
+      "y": 835,
+      "width": 0,
+      "height": 0,
+      "backgroundColor": "transparent",
+      "strokeColor": "#e8590c",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "text": "",
+      "fontSize": 16,
+      "fontFamily": 2,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          24,
+          0
+        ]
+      ],
+      "start": {
+        "id": "req-store"
+      },
+      "end": {
+        "id": "req-sqlc"
+      },
+      "startArrowhead": "",
+      "endArrowhead": "arrow",
+      "createdAt": "2026-05-06T22:29:15.124Z",
+      "updatedAt": "2026-05-06T22:29:15.124Z",
+      "version": 1
+    },
+    {
+      "id": "arrow-req-sqlc-pg",
+      "type": "arrow",
+      "x": 1317.9949028347803,
+      "y": 831.8573248987578,
+      "width": 0,
+      "height": 0,
+      "backgroundColor": "transparent",
+      "strokeColor": "#0c8599",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "label": {
+        "text": "queries"
+      },
+      "fontSize": 16,
+      "fontFamily": 2,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          94.01019433043939,
+          -3.3575069403729003
+        ]
+      ],
+      "start": {
+        "id": "req-sqlc"
+      },
+      "end": {
+        "id": "pg-core"
+      },
+      "startArrowhead": "",
+      "endArrowhead": "arrow",
+      "createdAt": "2026-05-06T22:29:15.124Z",
+      "updatedAt": "2026-05-06T22:29:15.124Z",
+      "version": 1
+    },
+    {
+      "id": "arrow-users-accounts",
+      "type": "arrow",
+      "x": 1742.1104268236468,
+      "y": 802.9876828256433,
+      "width": 0,
+      "height": 0,
+      "backgroundColor": "transparent",
+      "strokeColor": "#2f9e44",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "label": {
+        "text": "owns"
+      },
+      "fontSize": 16,
+      "fontFamily": 2,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0.7791463527064479,
+          14.024634348713334
+        ]
+      ],
+      "start": {
+        "id": "users-table"
+      },
+      "end": {
+        "id": "accounts-table"
+      },
+      "startArrowhead": "",
+      "endArrowhead": "arrow",
+      "createdAt": "2026-05-06T22:29:15.124Z",
+      "updatedAt": "2026-05-06T22:29:15.124Z",
+      "version": 1
+    },
+    {
+      "id": "arrow-users-sessions",
+      "type": "arrow",
+      "x": 1828,
+      "y": 765,
+      "width": 0,
+      "height": 0,
+      "backgroundColor": "transparent",
+      "strokeColor": "#9c36b5",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "label": {
+        "text": "logs in"
+      },
+      "fontSize": 16,
+      "fontFamily": 2,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          24,
+          0
+        ]
+      ],
+      "start": {
+        "id": "users-table"
+      },
+      "end": {
+        "id": "sessions-table"
+      },
+      "startArrowhead": "",
+      "endArrowhead": "arrow",
+      "createdAt": "2026-05-06T22:29:15.124Z",
+      "updatedAt": "2026-05-06T22:29:15.124Z",
+      "version": 1
+    },
+    {
+      "id": "arrow-accounts-entries",
+      "type": "arrow",
+      "x": 1837.8000917837865,
+      "y": 833.8556752897701,
+      "width": 0,
+      "height": 0,
+      "backgroundColor": "transparent",
+      "strokeColor": "#e8590c",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "label": {
+        "text": "ledger rows"
+      },
+      "fontSize": 16,
+      "fontFamily": 2,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          214.39981643242731,
+          -48.85059108586938
+        ]
+      ],
+      "start": {
+        "id": "accounts-table"
+      },
+      "end": {
+        "id": "entries-table"
+      },
+      "startArrowhead": "",
+      "endArrowhead": "arrow",
+      "createdAt": "2026-05-06T22:29:15.124Z",
+      "updatedAt": "2026-05-06T22:29:15.124Z",
+      "version": 1
+    },
+    {
+      "id": "arrow-accounts-transfers",
+      "type": "arrow",
+      "x": 1838,
+      "y": 855,
+      "width": 0,
+      "height": 0,
+      "backgroundColor": "transparent",
+      "strokeColor": "#e03131",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "label": {
+        "text": "money moves"
+      },
+      "fontSize": 16,
+      "fontFamily": 2,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          214,
+          0
+        ]
+      ],
+      "start": {
+        "id": "accounts-table"
+      },
+      "end": {
+        "id": "transfers-table"
+      },
+      "startArrowhead": "",
+      "endArrowhead": "arrow",
+      "createdAt": "2026-05-06T22:29:15.124Z",
+      "updatedAt": "2026-05-06T22:29:15.124Z",
+      "version": 1
+    },
+    {
+      "id": "arrow-tx1-tx2",
+      "type": "arrow",
+      "x": 408,
+      "y": 1095,
+      "width": 0,
+      "height": 0,
+      "backgroundColor": "transparent",
+      "strokeColor": "#1e1e1e",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "text": "",
+      "fontSize": 16,
+      "fontFamily": 2,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          54,
+          0
+        ]
+      ],
+      "start": {
+        "id": "tx-step1"
+      },
+      "end": {
+        "id": "tx-step2"
+      },
+      "startArrowhead": "",
+      "endArrowhead": "arrow",
+      "createdAt": "2026-05-06T22:29:15.124Z",
+      "updatedAt": "2026-05-06T22:29:15.124Z",
+      "version": 1
+    },
+    {
+      "id": "arrow-tx2-tx3",
+      "type": "arrow",
+      "x": 758,
+      "y": 1095,
+      "width": 0,
+      "height": 0,
+      "backgroundColor": "transparent",
+      "strokeColor": "#1e1e1e",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "text": "",
+      "fontSize": 16,
+      "fontFamily": 2,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          54,
+          0
+        ]
+      ],
+      "start": {
+        "id": "tx-step2"
+      },
+      "end": {
+        "id": "tx-step3"
+      },
+      "startArrowhead": "",
+      "endArrowhead": "arrow",
+      "createdAt": "2026-05-06T22:29:15.124Z",
+      "updatedAt": "2026-05-06T22:29:15.124Z",
+      "version": 1
+    },
+    {
+      "id": "arrow-tx3-tx4",
+      "type": "arrow",
+      "x": 1108,
+      "y": 1095,
+      "width": 0,
+      "height": 0,
+      "backgroundColor": "transparent",
+      "strokeColor": "#1e1e1e",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "text": "",
+      "fontSize": 16,
+      "fontFamily": 2,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          54,
+          0
+        ]
+      ],
+      "start": {
+        "id": "tx-step3"
+      },
+      "end": {
+        "id": "tx-step4"
+      },
+      "startArrowhead": "",
+      "endArrowhead": "arrow",
+      "createdAt": "2026-05-06T22:29:15.124Z",
+      "updatedAt": "2026-05-06T22:29:15.124Z",
+      "version": 1
+    },
+    {
+      "id": "arrow-tx4-tx5",
+      "type": "arrow",
+      "x": 1478,
+      "y": 1095,
+      "width": 0,
+      "height": 0,
+      "backgroundColor": "transparent",
+      "strokeColor": "#1e1e1e",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "text": "",
+      "fontSize": 16,
+      "fontFamily": 2,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          54,
+          0
+        ]
+      ],
+      "start": {
+        "id": "tx-step4"
+      },
+      "end": {
+        "id": "tx-step5"
+      },
+      "startArrowhead": "",
+      "endArrowhead": "arrow",
+      "createdAt": "2026-05-06T22:29:15.124Z",
+      "updatedAt": "2026-05-06T22:29:15.124Z",
+      "version": 1
+    },
+    {
+      "id": "arrow-tx5-tx6",
+      "type": "arrow",
+      "x": 1868,
+      "y": 1095,
+      "width": 0,
+      "height": 0,
+      "backgroundColor": "transparent",
+      "strokeColor": "#1e1e1e",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "text": "",
+      "fontSize": 16,
+      "fontFamily": 2,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          54,
+          0
+        ]
+      ],
+      "start": {
+        "id": "tx-step5"
+      },
+      "end": {
+        "id": "tx-step6"
+      },
+      "startArrowhead": "",
+      "endArrowhead": "arrow",
+      "createdAt": "2026-05-06T22:29:15.125Z",
+      "updatedAt": "2026-05-06T22:29:15.125Z",
+      "version": 1
+    }
+  ],
+  "appState": {
+    "viewBackgroundColor": "#ffffff",
+    "gridSize": null
+  }
+}
