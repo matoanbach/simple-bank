@@ -126,7 +126,7 @@
       "strokeStyle": "solid",
       "roughness": 0,
       "opacity": 100,
-      "text": "Current runtime and CI (what the repo does today)",
+      "text": "Runtime and CI",
       "fontSize": 20,
       "fontFamily": 2,
       "startArrowhead": "",
@@ -148,7 +148,7 @@
       "strokeStyle": "solid",
       "roughness": 0,
       "opacity": 100,
-      "text": "Suggested cloud deployment shape",
+      "text": "AWS deployment on EKS",
       "fontSize": 20,
       "fontFamily": 2,
       "startArrowhead": "",
@@ -170,7 +170,7 @@
       "strokeStyle": "solid",
       "roughness": 0,
       "opacity": 100,
-      "text": "Runtime traffic",
+      "text": "Gateway runtime",
       "fontSize": 16,
       "fontFamily": 2,
       "startArrowhead": "",
@@ -192,7 +192,7 @@
       "strokeStyle": "solid",
       "roughness": 0,
       "opacity": 100,
-      "text": "Delivery / CI",
+      "text": "CI / deploy",
       "fontSize": 16,
       "fontFamily": 2,
       "startArrowhead": "",
@@ -215,7 +215,7 @@
       "roughness": 1,
       "opacity": 100,
       "label": {
-        "text": "API Client\nor Browser"
+        "text": "API Client\nor HTTP caller"
       },
       "fontSize": 20,
       "fontFamily": 2,
@@ -239,7 +239,7 @@
       "roughness": 1,
       "opacity": 100,
       "label": {
-        "text": "Go API Service\nGin router + handlers"
+        "text": "HTTP gateway\n+ gRPC service"
       },
       "fontSize": 20,
       "fontFamily": 2,
@@ -263,7 +263,7 @@
       "roughness": 1,
       "opacity": 100,
       "label": {
-        "text": "PostgreSQL\naccounts + transfers"
+        "text": "PostgreSQL\napp data"
       },
       "fontSize": 20,
       "fontFamily": 2,
@@ -287,7 +287,7 @@
       "roughness": 1,
       "opacity": 100,
       "label": {
-        "text": "app.env / config"
+        "text": "app.env +\nmigrations"
       },
       "fontSize": 18,
       "fontFamily": 2,
@@ -310,7 +310,7 @@
       "strokeStyle": "solid",
       "roughness": 0,
       "opacity": 100,
-      "text": "JWT protects account routes",
+      "text": "PASETO tokens + sessions",
       "fontSize": 16,
       "fontFamily": 2,
       "startArrowhead": "",
@@ -429,7 +429,7 @@
       "roughness": 1,
       "opacity": 100,
       "label": {
-        "text": "Load Balancer /\nIngress"
+        "text": "NGINX Ingress\napiv2.leetyap.com"
       },
       "fontSize": 20,
       "fontFamily": 2,
@@ -453,7 +453,7 @@
       "roughness": 1,
       "opacity": 100,
       "label": {
-        "text": "API App Service\ncontainer or pods"
+        "text": "Amazon EKS\nsimple-bank API pod"
       },
       "fontSize": 22,
       "fontFamily": 2,
@@ -477,7 +477,7 @@
       "roughness": 1,
       "opacity": 100,
       "label": {
-        "text": "Managed PostgreSQL"
+        "text": "PostgreSQL DB\n(external / managed)"
       },
       "fontSize": 20,
       "fontFamily": 2,
@@ -501,7 +501,7 @@
       "roughness": 1,
       "opacity": 100,
       "label": {
-        "text": "Secrets / config"
+        "text": "AWS Secrets\nManager"
       },
       "fontSize": 18,
       "fontFamily": 2,
@@ -549,7 +549,7 @@
       "roughness": 1,
       "opacity": 100,
       "label": {
-        "text": "Container Registry"
+        "text": "Amazon ECR"
       },
       "fontSize": 20,
       "fontFamily": 2,
@@ -572,7 +572,7 @@
       "strokeStyle": "solid",
       "roughness": 0,
       "opacity": 100,
-      "text": "Use this when you want cloud hosting",
+      "text": "Traffic enters through Ingress",
       "fontSize": 16,
       "fontFamily": 2,
       "startArrowhead": "",
