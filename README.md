@@ -6,98 +6,112 @@ GitHub repository: [matoanbach/simple-bank](https://github.com/matoanbach/simple
 
 `simple-bank` is a backend engineering project that simulates core banking workflows such as user registration, login, account management, and money transfers.
 
-It was built as a hands-on learning project to practice API development, database design, transaction handling, authentication, testing, and CI workflows using Go and PostgreSQL.
+It was built as a hands-on learning project to practice API development, database design, transaction handling, authentication, testing, and deployment workflows using Go and PostgreSQL.
 
-This README is based on what the code in this repository actually does today: a Go REST API backed by PostgreSQL, with JWT-based authentication, session records, and transactional transfer logic.
+This README documents the original implementation preserved in `archive/`. The repository root contains newer rebuild work, but `archive/` is the reference implementation described here: a Go backend backed by PostgreSQL, with a gRPC service, an HTTP JSON gateway, Swagger docs, session-backed authentication, transactional transfer logic, and AWS deployment configuration.
 
 ## What It Does
 
 This project includes:
 - User registration with password hashing.
-- User login with JWT token generation.
-- Authenticated account creation and account listing.
-- Authenticated account lookup with ownership checks.
-- Money transfer logic between accounts.
-- Session storage for refresh-token-style login tracking.
-- PostgreSQL migrations, generated query code, and automated tests.
+- User login with PASETO access and refresh tokens.
+- Session storage for login tracking and refresh-token validation.
+- Authenticated user profile updates through the gRPC service.
+- HTTP JSON access to the gRPC API through `grpc-gateway`.
+- Swagger documentation served by the application.
+- A legacy Gin REST layer in `archive/api/` for accounts, token renewal, and money transfers.
+- PostgreSQL migrations, generated query code, automated tests, and deployment manifests.
 
-In plain terms, this project behaves like a small banking backend: users can sign up, log in, create accounts, and move money between accounts while the system records balances and transfer history.
+In plain terms, the archived implementation behaves like a small banking backend with two transport layers: the main runtime exposes user flows through gRPC plus an HTTP gateway, while the older Gin layer contains the account and transfer endpoints that complete the banking workflow.
 
 ## Why I Built It
 
 I built `simple-bank` to get hands-on practice with backend and cloud-adjacent engineering topics instead of only learning them in theory.
 
 The project helped me work through:
-- designing REST API endpoints
+- designing gRPC and REST API endpoints
 - structuring Go application code
 - writing SQL schema and queries
 - generating typed database access code with `sqlc`
-- handling password hashing and JWT authentication
+- generating protobuf, gateway, and Swagger artifacts
+- handling password hashing and PASETO authentication
 - implementing transactional money movement safely
 - running tests against PostgreSQL
-- setting up GitHub Actions CI for database-backed test runs
+- packaging the service with Docker and preparing AWS deployment workflows
 
 ## Skills Demonstrated
 
 - Go backend development
-- REST API design with Gin
+- gRPC API design
+- HTTP JSON gateway integration with `grpc-gateway`
 - PostgreSQL schema design and migrations
 - transactional SQL workflow design
 - authentication and session concepts
 - automated testing
-- CI with GitHub Actions
-- local developer workflow with Make targets
+- CI/CD with GitHub Actions
+- Docker, Kubernetes manifests, and AWS deployment workflow basics
 
 ## Tech Stack
 
 - Go
 - Gin
+- gRPC
+- `grpc-gateway`
+- Protocol Buffers
 - PostgreSQL
 - `sqlc`
 - `golang-migrate`
 - `bcrypt`
-- JWT
+- PASETO
 - Viper
-- Testify
+- Zerolog
+- Docker
 - GitHub Actions
+- AWS ECR and EKS
 
 ## Architecture
 
 This diagram is split into two layers so both non-technical and technical readers can understand the project quickly.
 
-- Top half: current runtime, CI workflow, and a suggested cloud deployment shape.
+- Top half: the archived runtime, CI workflow, and AWS deployment shape.
 - Bottom half: internal request flow, core database model, and transfer transaction design.
 
 ![simple-bank architecture and system design](images/simple-bank-architecture.png)
 
 ## Project Layout
 
-- App entrypoint: `main.go`
-- HTTP API: `api/`
-- Database migrations: `db/migration/`
-- SQL queries for `sqlc`: `db/query/`
-- Generated DB code + store logic: `db/sqlc/`
-- Config and utility helpers: `db/util/`
-- Token/auth code: `token/`
-- CI workflow: `.github/workflows/test.yml`
+- App entrypoint: `archive/main.go`
+- gRPC service handlers: `archive/gapi/`
+- Protobuf contracts: `archive/proto/`
+- Generated protobuf and gateway code: `archive/pb/`
+- Legacy Gin REST API: `archive/api/`
+- Database migrations: `archive/db/migration/`
+- SQL queries for `sqlc`: `archive/db/query/`
+- Generated DB code + store logic: `archive/db/sqlc/`
+- Config and utility helpers: `archive/db/util/`
+- Token/auth code: `archive/token/`
+- Embedded Swagger assets: `archive/doc/swagger/`
+- Deployment manifests: `archive/eks/`
+- CI/CD workflows: `archive/.github/.github/workflows/`
 - Images used in the README: `images/`
 
 ## Run Locally
 
 Requirements:
-- Go `1.25.x`
+- Go `1.23.x`
 - Docker
-- PostgreSQL client tools are optional, but useful for inspection
-- `migrate` CLI if you want to run migrations manually outside the Makefile workflow
+- `migrate` CLI if you want to run the Makefile migration commands manually outside the container workflow
+- `protoc` and related plugins only if you want to regenerate protobuf and Swagger artifacts
 
 Commands:
 
 ```bash
-make postgres
-make createdb
-make migrateup
-go run main.go
+cd archive
+docker compose up --build
 ```
+
+The containerized app runs migrations on startup, waits for PostgreSQL, and starts the archived runtime.
+In the provided Compose file, the HTTP gateway is exposed on port `8080`; the gRPC server still runs inside the app on port `9090`, but that port is not published by default.
 
 Then open the API locally at:
 
@@ -105,17 +119,26 @@ Then open the API locally at:
 http://localhost:8080
 ```
 
+Swagger is served at:
+
+```text
+http://localhost:8080/swagger/
+```
+
 Useful commands:
 
 ```bash
+cd archive
 make sqlc
+make proto
 make test
-make migratedown
 ```
+
+If you run `archive/main.go` directly with a reachable PostgreSQL instance, you can also use `make evans` to connect to the gRPC server on `localhost:9090`.
 
 ## Environment Variables
 
-The repository includes an `app.env` file with local development values.
+The archived implementation includes an `archive/app.env` file with local development values.
 
 Key settings in that file include:
 - `ENVIRONMENT`
@@ -129,26 +152,36 @@ Key settings in that file include:
 - `REFRESH_TOKEN_DURATION`
 
 Technical note:
-- The application loads config from `app.env`, but the current `main.go` still uses hardcoded database connection constants for PostgreSQL. The README setup above follows the current code path that actually runs today.
+- `archive/main.go` loads config from `archive/app.env`, uses those values to connect to PostgreSQL, and runs migrations before starting the gateway and gRPC servers.
+- `archive/docker-compose.yaml` overrides `DB_SOURCE` inside the API container so the service can connect to the `postgres` container by hostname.
 
 ## API Summary
 
-Current routes:
+Primary archived runtime routes exposed through `grpc-gateway`:
+
+| Method | Route | Purpose |
+|---|---|---|
+| `POST` | `/v1/create_user` | Register a new user |
+| `POST` | `/v1/login_user` | Log in and receive access and refresh tokens |
+| `POST` | `/v1/update_user` | Update the authenticated user's profile or password |
+
+Legacy Gin REST routes still present in `archive/api/`:
 
 | Method | Route | Purpose |
 |---|---|---|
 | `POST` | `/users` | Register a new user |
 | `POST` | `/users/login` | Log in and receive tokens |
+| `POST` | `/tokens/renew_access` | Exchange a refresh token for a new access token |
 | `POST` | `/accounts` | Create an account for the authenticated user |
 | `GET` | `/accounts/:id` | Get a single account if it belongs to the authenticated user |
 | `GET` | `/accounts` | List accounts for the authenticated user |
 | `POST` | `/transfers` | Transfer money between accounts |
 
-Protected routes require a bearer token in the `Authorization` header.
+In `archive/main.go`, the primary runtime is the gRPC server plus HTTP gateway. The Gin router remains in the archive as an older transport layer and is not the server started by default.
 
 ## Data Model
 
-The database schema is centered around five main tables:
+The implemented database schema is centered around five main tables:
 
 - `users`: login identity and profile information
 - `accounts`: bank accounts owned by users
@@ -160,22 +193,25 @@ At a high level:
 - a user can own one or more accounts
 - a transfer creates movement between two accounts
 - each transfer also creates matching accounting entries
-- sessions are stored so login activity can be tracked and extended later
+- sessions are stored so refresh-token use can be validated against persisted session records
+
+The DBML in `archive/doc/db.dbml` also sketches a `verify_emails` table as a design direction, but the implemented migrations in `archive/db/migration/` currently create the five tables listed above.
 
 ## Authentication and Security
 
-The current implementation includes:
+The archived implementation includes:
 - password hashing with `bcrypt`
-- JWT token creation and validation
-- authentication middleware for protected routes
-- account ownership checks before returning account data
-- session persistence for login sessions
+- PASETO token creation and validation
+- short-lived access tokens plus longer-lived refresh tokens
+- session persistence for refresh-token validation
+- gRPC authorization checks for authenticated user updates
+- metadata capture such as user agent and client IP when sessions are created
 
-This means the project is not just a CRUD demo. It includes practical access control behavior for user-owned resources.
+This means the project is not just a CRUD demo. It includes practical token, session, and authorization behavior that is closer to a real backend service.
 
 ## Transaction Design
 
-The most important backend workflow in this project is the transfer transaction.
+The most important banking workflow in the archived project is the transfer transaction implemented in `archive/db/sqlc/store.go` and used by the legacy Gin REST layer.
 
 When a transfer is created, the application:
 - creates a transfer record
@@ -185,21 +221,26 @@ When a transfer is created, the application:
 
 The custom store logic also updates accounts in a stable order to reduce deadlock risk during concurrent transfers.
 
-That logic lives in `db/sqlc/store.go`.
+That logic lives in `archive/db/sqlc/store.go`.
 
 ## Testing and CI
 
-Automated tests are currently strongest around the database and transaction layer.
+Automated tests in the archived implementation cover several layers of the system.
 
-The test suite covers:
-- account creation, retrieval, update, deletion, and listing
-- transfer transaction behavior
-- concurrent transfer handling and deadlock-oriented scenarios
+The test suite includes:
+- database CRUD tests for accounts, entries, users, and transfers
+- store-level transfer transaction tests
+- token tests
+- legacy Gin API tests for middleware and selected handlers
 
 CI workflow:
-- File: `.github/workflows/test.yml`
-- Trigger: pushes to `main`
-- It starts PostgreSQL, runs migrations, and executes `go test`
+- Test file: `archive/.github/.github/workflows/test.yml`
+- Trigger: pushes and pull requests targeting `main`
+- It starts PostgreSQL, runs migrations, and executes `make test`
+
+Deployment workflow:
+- Deploy file: `archive/.github/.github/workflows/deploy.yaml`
+- GitHub Actions authenticates to AWS, loads runtime config from AWS Secrets Manager, builds and pushes a Docker image to Amazon ECR, updates kubeconfig for Amazon EKS, and applies the Kubernetes manifests.
 
 ## Technical Notes
 
@@ -207,57 +248,57 @@ This section is for engineers who want a more implementation-focused view.
 
 ### HTTP Layer
 
-The API is implemented with `Gin`.
+The primary archived transport is an HTTP JSON gateway generated from protobuf annotations and backed by the gRPC server implementation.
 
 Key files:
-- `api/server.go`
-- `api/user.go`
-- `api/accounts.go`
-- `api/transfer.go`
-- `api/middleware.go`
+- `archive/main.go`
+- `archive/gapi/server.go`
+- `archive/proto/service_simple_bank.proto`
+- `archive/pb/`
+- `archive/doc/swagger/`
 
-The router separates public user/login routes from authenticated account and transfer routes.
+The project also contains a legacy Gin transport in `archive/api/` that exposes banking endpoints such as accounts, transfers, and token renewal.
 
 ### Database Layer
 
 The project uses:
 - SQL migrations for schema changes
-- handwritten SQL queries in `db/query/`
+- handwritten SQL queries in `archive/db/query/`
 - generated Go bindings via `sqlc`
 - a custom `Store` type for transaction orchestration
 
-This keeps SQL explicit while still giving typed Go accessors.
+This keeps SQL explicit while still giving typed Go accessors and a dedicated place for multi-step transaction logic.
 
 ### Token Layer
 
 The token package provides:
 - a token maker interface
-- JWT implementation
+- an active PASETO implementation used by the archived runtime
+- a JWT implementation kept in the package as an alternate approach
 - token payload validation
 
-This keeps authentication logic isolated from the HTTP handlers.
+This keeps authentication logic isolated from the transport handlers while making it easy to compare token strategies.
 
 ## What To Improve
 
 Engineering quality:
-- Align `main.go` with config-loaded database settings instead of hardcoded DB constants.
-- Add API handler tests in addition to DB/store tests.
-- Add route-level validation and error response consistency improvements.
-- Add better structured logging.
+- Decide whether to consolidate around the gRPC plus gateway stack or fully restore the legacy Gin banking API as a first-class runtime.
+- Expand automated tests around the gRPC handlers in addition to the existing DB, token, and legacy API coverage.
+- Expose the gRPC port in Docker Compose for easier local gRPC client testing.
+- Tighten documentation around local bootstrap, code generation, and deployment prerequisites.
 
-Authentication and product behavior:
-- Complete the token renewal flow.
-- Expand session management behavior.
-- Add stricter authorization and audit-friendly tracking.
+Architecture and product behavior:
+- Extend the gRPC surface beyond user create, login, and update flows if rebuilding the banking features on that transport.
+- Clarify whether future work should revive design-only features such as email verification.
+- Improve the boundary between archived reference code and new rebuild work so the active learning path is clearer.
 
-Developer experience:
-- Add a documented `.env.example` style setup.
-- Standardize local ports between `app.env`, tests, and runtime.
-- Add a single command for full local bootstrap.
+Deployment and operations:
+- Document the AWS infrastructure assumptions behind the ECR, EKS, and Secrets Manager workflow more explicitly.
+- Add a simpler local setup path for developers who want to run Postgres outside Docker.
 
 ## Summary
 
-`simple-bank` is a backend practice project that demonstrates API development, authentication, SQL schema design, transactional money movement, testing, and CI using Go and PostgreSQL.
+`simple-bank` is a backend practice project that demonstrates API development, authentication, SQL schema design, transactional money movement, testing, code generation, and deployment using Go and PostgreSQL.
 
 For non-technical readers, it shows a practical banking-style backend.
-For technical readers, it shows how I approached REST design, SQL-driven data access, transaction safety, and automated verification.
+For technical readers, the archived implementation in `archive/` shows how I combined gRPC, an HTTP gateway, SQL-driven data access, session-backed authentication, transaction safety, CI, and AWS-oriented deployment workflows.
