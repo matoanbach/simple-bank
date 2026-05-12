@@ -241,6 +241,8 @@ CI workflow:
 Deployment workflow:
 - Deploy file: `archive/.github/.github/workflows/deploy.yaml`
 - GitHub Actions authenticates to AWS, loads runtime config from AWS Secrets Manager, builds and pushes a Docker image to Amazon ECR, updates kubeconfig for Amazon EKS, and applies the Kubernetes manifests.
+- The workflow also applies `archive/eks/aws-auth.yaml`, which is the key IAM-to-Kubernetes bridge in this repo.
+- In that file, the EKS worker-node role `AWSEKSNodeRole` is mapped into Kubernetes node groups, and the IAM user `github-ci` is mapped to `system:masters` for deployment access.
 
 ## Technical Notes
 
@@ -279,6 +281,39 @@ The token package provides:
 
 This keeps authentication logic isolated from the transport handlers while making it easy to compare token strategies.
 
+### AWS and IAM Notes
+
+The archived deployment flow is also a useful small IAM review example because it touches AWS identity, EKS authentication, and Kubernetes authorization boundaries.
+
+Key files:
+- `archive/.github/.github/workflows/deploy.yaml`
+- `archive/eks/aws-auth.yaml`
+
+What the deployment flow shows:
+- GitHub Actions first authenticates to AWS.
+- The workflow then reads configuration from AWS Secrets Manager.
+- It logs in to Amazon ECR and pushes the application image.
+- It calls `aws eks update-kubeconfig` so the CI runner can talk to the EKS control plane.
+- It applies `aws-auth.yaml`, which maps AWS IAM identities into Kubernetes usernames and groups.
+
+IAM details visible in the repo:
+- The archived workflow currently uses long-lived AWS access keys stored in GitHub secrets: `AWS_ROOT_ACCESS_KEY` and `AWS_ROOT_SECRET_ACCESS_KEY`.
+- The workflow includes commented `role-to-assume` lines, which point to a more production-ready IAM pattern based on role assumption instead of static credentials.
+- `archive/eks/aws-auth.yaml` maps the IAM role `arn:aws:iam::160885278762:role/AWSEKSNodeRole` to Kubernetes node groups such as `system:bootstrappers` and `system:nodes`.
+- The same file maps the IAM user `arn:aws:iam::160885278762:user/github-ci` to the Kubernetes group `system:masters`, which is effectively cluster-admin level access.
+
+IAM concepts this project helps review:
+- The difference between AWS authentication and Kubernetes authorization.
+- The difference between a worker-node role and a CI deployment identity.
+- How EKS uses the `aws-auth` ConfigMap to translate IAM identities into Kubernetes RBAC groups.
+- Why Secrets Manager, ECR, and EKS access should normally be scoped through least-privilege IAM policies.
+- Why static AWS keys are weaker than OIDC federation plus `sts:AssumeRole` for CI systems.
+
+Practical IAM/SRE takeaways:
+- This repo shows the path from CI identity to cloud API access to cluster-admin style authorization.
+- It is a good example of where blast radius can become too broad if CI is mapped to `system:masters`.
+- It is also a good example of an improvement path: replace static credentials with GitHub OIDC, assume a dedicated deployment role, and narrow both IAM permissions and Kubernetes RBAC scope.
+
 ## What To Improve
 
 Engineering quality:
@@ -294,6 +329,7 @@ Architecture and product behavior:
 
 Deployment and operations:
 - Document the AWS infrastructure assumptions behind the ECR, EKS, and Secrets Manager workflow more explicitly.
+- Replace static AWS credentials in CI with GitHub OIDC plus `sts:AssumeRole`, and narrow the IAM and Kubernetes permissions granted to the deployment identity.
 - Add a simpler local setup path for developers who want to run Postgres outside Docker.
 
 ## Summary
