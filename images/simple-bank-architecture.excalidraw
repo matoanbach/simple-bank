@@ -704,7 +704,7 @@
       "strokeStyle": "solid",
       "roughness": 0,
       "opacity": 100,
-      "text": "Request handling path",
+      "text": "API request path",
       "fontSize": 20,
       "fontFamily": 2,
       "startArrowhead": "",
@@ -748,56 +748,8 @@
       "strokeStyle": "solid",
       "roughness": 0,
       "opacity": 100,
-      "text": "Transfer transaction flow",
+      "text": "Transfer flow",
       "fontSize": 20,
-      "fontFamily": 2,
-      "startArrowhead": "",
-      "endArrowhead": "",
-      "createdAt": "2026-05-06T22:29:15.122Z",
-      "updatedAt": "2026-05-06T22:29:15.122Z",
-      "version": 1
-    },
-    {
-      "id": "public-routes",
-      "type": "rectangle",
-      "x": 280,
-      "y": 745,
-      "width": 250,
-      "height": 40,
-      "backgroundColor": "#ffffff",
-      "strokeColor": "#2f9e44",
-      "strokeWidth": 2,
-      "strokeStyle": "solid",
-      "roughness": 1,
-      "opacity": 100,
-      "label": {
-        "text": "Public: /users, /users/login"
-      },
-      "fontSize": 16,
-      "fontFamily": 2,
-      "startArrowhead": "",
-      "endArrowhead": "",
-      "createdAt": "2026-05-06T22:29:15.122Z",
-      "updatedAt": "2026-05-06T22:29:15.122Z",
-      "version": 1
-    },
-    {
-      "id": "protected-routes",
-      "type": "rectangle",
-      "x": 560,
-      "y": 745,
-      "width": 380,
-      "height": 40,
-      "backgroundColor": "#ffffff",
-      "strokeColor": "#9c36b5",
-      "strokeWidth": 2,
-      "strokeStyle": "solid",
-      "roughness": 1,
-      "opacity": 100,
-      "label": {
-        "text": "Protected: /accounts, /accounts/:id, /transfers"
-      },
-      "fontSize": 16,
       "fontFamily": 2,
       "startArrowhead": "",
       "endArrowhead": "",
@@ -843,7 +795,7 @@
       "roughness": 1,
       "opacity": 100,
       "label": {
-        "text": "Gin Router"
+        "text": "HTTP\ngateway"
       },
       "fontSize": 20,
       "fontFamily": 2,
@@ -867,7 +819,7 @@
       "roughness": 1,
       "opacity": 100,
       "label": {
-        "text": "JWT auth\nmiddleware"
+        "text": "Auth"
       },
       "fontSize": 20,
       "fontFamily": 2,
@@ -891,7 +843,7 @@
       "roughness": 1,
       "opacity": 100,
       "label": {
-        "text": "Handlers\nusers, accounts,\ntransfers"
+        "text": "Service"
       },
       "fontSize": 18,
       "fontFamily": 2,
@@ -915,7 +867,7 @@
       "roughness": 1,
       "opacity": 100,
       "label": {
-        "text": "Store /\nTx"
+        "text": "DB access"
       },
       "fontSize": 20,
       "fontFamily": 2,
@@ -939,7 +891,7 @@
       "roughness": 1,
       "opacity": 100,
       "label": {
-        "text": "sqlc query\nlayer"
+        "text": "Queries"
       },
       "fontSize": 20,
       "fontFamily": 2,
@@ -963,7 +915,7 @@
       "roughness": 1,
       "opacity": 100,
       "label": {
-        "text": "PostgreSQL\nsimple_bank"
+        "text": "PostgreSQL"
       },
       "fontSize": 22,
       "fontFamily": 2,
@@ -1131,7 +1083,7 @@
       "roughness": 1,
       "opacity": 100,
       "label": {
-        "text": "2. Check account ownership via JWT user"
+        "text": "2. Authorize"
       },
       "fontSize": 20,
       "fontFamily": 2,
@@ -1155,7 +1107,7 @@
       "roughness": 1,
       "opacity": 100,
       "label": {
-        "text": "3. Create transfer row"
+        "text": "3. Write transfer"
       },
       "fontSize": 20,
       "fontFamily": 2,
@@ -1179,7 +1131,7 @@
       "roughness": 1,
       "opacity": 100,
       "label": {
-        "text": "4. Create debit and credit entries"
+        "text": "4. Write entries"
       },
       "fontSize": 20,
       "fontFamily": 2,
@@ -1203,7 +1155,7 @@
       "roughness": 1,
       "opacity": 100,
       "label": {
-        "text": "5. Update both balances in one DB transaction"
+        "text": "5. Update balances"
       },
       "fontSize": 20,
       "fontFamily": 2,
@@ -1227,7 +1179,7 @@
       "roughness": 1,
       "opacity": 100,
       "label": {
-        "text": "6. Commit and return transfer result"
+        "text": "6. Commit"
       },
       "fontSize": 20,
       "fontFamily": 2,
@@ -1251,7 +1203,7 @@
       "roughness": 1,
       "opacity": 100,
       "label": {
-        "text": "Deadlock reduction idea: update accounts in a stable order so concurrent transfers are less likely to block each other."
+        "text": "Keep account updates ordered to reduce deadlock risk."
       },
       "fontSize": 20,
       "fontFamily": 2,
